@@ -9,7 +9,7 @@ public class Decrypt {
         String en = sc.nextLine();
         char[] enary = en.toCharArray();
         Set<Character> excludedChars = new HashSet<>(Arrays.asList(
-            'w', 'O', '£', 'z', 'R', 'S', 'l', 'U', 'v', 'N', 'x', 'y', 'Q', 'j', 'k', 'T', 'm', '@', 'P', '$', '&'));
+            'w', 'O', 'z', 'R', 'S', 'l', 'U', 'v', 'N', 'x', 'y', 'Q', 'j', 'k', 'T', 'm', '@', 'P', '$', '&'));
 
         for (int i = 0; i < 4; i++) {
             if (!excludedChars.contains(enary[i])) {
@@ -21,9 +21,10 @@ public class Decrypt {
         int lentSt = Integer.parseInt(lengthStr, 16);
         // System.out.println("String length is " + lentSt);
         
+        
         sb.setLength(0); 
 
-        int[] info = new int[lentSt];
+        int[] info = new int[(enary.length)];
         int j = 0;
 
         for (int i = 4; i < enary.length; i++) {
